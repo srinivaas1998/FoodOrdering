@@ -1,0 +1,7 @@
+1.Open Cmd
+2.Enter Mongod
+3.Open another CMD
+4.Enter mongo
+5.In Mongo shell, enter 'show dbs'
+6.Either use available database or create a new database
+7.Connect to python by installing 'pymongo'
