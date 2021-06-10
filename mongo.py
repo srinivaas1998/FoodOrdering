@@ -11,7 +11,6 @@ def insert_data(name,phone,password,latitude,longitude):
         "pass":password,
         "location_customer":{'type':"Point", "coordinates": [latitude,longitude]},
         "location_rest": {'type': "Point", "coordinates": ['13.0615','80.2615']}
-
     }
     rec_id = col.insert_one(rec1)
     print("Data inserted with record id ",rec_id)
@@ -20,11 +19,8 @@ def insert_data(name,phone,password,latitude,longitude):
         print(x)
 
 
-#insert_data("MGS","9443484505","chinku1998","13.0888","80.2620")
-
 
 def select_data(phone,password):
-
     myClient = pymongo.MongoClient()
     db = myClient["rest"]
     col = db["Customer"]
@@ -37,9 +33,6 @@ def select_data(phone,password):
     for doc in col.find(rec1):
         print(doc)
         ph=doc["phone"]
-
         pa=doc["pass"]
     if((phone==ph) and (password==pa)):
         return 1
-
-#print(select_data("123456789","chinku1998"))
