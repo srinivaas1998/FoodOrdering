@@ -1,6 +1,9 @@
 from tkinter import *
 from mongo import *
 from Menu import menu
+from db import *
+
+
 root = Tk()
 root.title('FooGo')
 root.geometry('450x550')
@@ -13,7 +16,9 @@ def signUp():
         create_record_button = Button(
             frame, text='Create Account', bg='black', fg='white', padx=10, pady=10,
             command=insert_data(name_entry.get(),phone_entry.get(),password_entry.get(),lat_entry.get(),long_entry.get()))
-
+        create_table()
+        insert_entry(name_entry.get(),phone_entry.get(),password_entry.get(),lat_entry.get(),long_entry.get(),13.08784, 80.27847)
+        update_distance()
         create_record_button.grid(row=4, padx=120, pady=15)
 
 
@@ -68,6 +73,7 @@ def signIn():
         c=select_data(phone_entry.get(), password_entry.get())
         print(c)
         if(c==1):
+
             menu()
         else:
             top1 = Toplevel();
@@ -75,13 +81,6 @@ def signIn():
             frame_inner1.pack(padx=50, pady=50)
             innerLabel = Label(frame_inner1, text="Wrong ")
             innerLabel.pack()
-
-        """create_record_button = Button(
-                frame, text='Create Account', bg='black', fg='white', padx=10, pady=10,
-                command=select_data(phone_entry.get(), password_entry.get()))
-
-        create_record_button.grid(row=4, padx=120, pady=15)
-"""
     ##############################
     # Customer registration frame
     ##############################
@@ -107,6 +106,10 @@ def signIn():
                              fg='white', padx=10, pady=10, command=login)
 
     signin_button.grid(row=4, column=0, padx=120, pady=15)
+
+
+
+
 
 
 home_frame = Frame(root, bg='lightgrey')
