@@ -1,19 +1,40 @@
 from tkinter import *
-
-
+from db import select,drop_table
 def menu():
    root = Tk()
    root.geometry("1150x750+0+0")
-   #root.geometry("1000x1000")
-   # to get total bill calculation part
 
    def order():
+
 
       top = Toplevel();
       frame_inner1 = LabelFrame(top, text="", padx=50, pady=50)
       frame_inner1.pack(padx=50, pady=50)
       innerLabel = Label(frame_inner1, text="Thank you for Ordering")
       innerLabel.pack()
+
+      def time(a,b):
+         d=select()
+         drop_table()
+
+         if(d<1):
+            s=a+b+5
+         elif (d < 2):
+            s = a+ b + 10
+         elif (d < 3):
+            s = a + b + 15
+         elif (d < 4):
+            s = a + b + 20
+         elif (d < 5):
+            s = a + b+ 25
+         else:
+            s=a+b+30
+         return s
+
+
+      s=time(10,5)
+      myLabel1 = Label(frame_inner1, text="Your Food will be delivered in "+ str(s)+" minutes")
+      myLabel1.pack()
 
    def calculate():
 
@@ -162,6 +183,8 @@ def menu():
    checkout.place(x=650, y=370)
 
    root.mainloop()
+
+
 
 
 
