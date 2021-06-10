@@ -1,7 +1,12 @@
-1.Open Cmd
-2.Enter Mongod
-3.Open another CMD
-4.Enter mongo
-5.In Mongo shell, enter 'show dbs'
-6.Either use available database or create a new database
-7.Connect to python by installing 'pymongo'
+1. Open Cmd
+2. Enter Mongod
+3. Open another CMD
+4. Enter mongo
+5. In Mongo shell, enter 'show dbs'
+6. Either use available database or create a new database
+7. Connect to python by installing 'pymongo'
+8. Run the main.py and enter details and in python collection is created 
+9. Check in Mongo shell if details ar added
+10.Run Menu.py and sign in by entering phone.no and password.
+11.If correct, the menu ui appears, select the food items and click bill.
+12.Bill amount appears and click checkout and delivery time is displayed.
